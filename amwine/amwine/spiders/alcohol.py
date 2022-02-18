@@ -24,8 +24,9 @@ class AlcoholSpider(scrapy.Spider):
                        )
 
     def parse(self, response):
-        page_count = response.css('ul.catalog-pagination li::text')[5].get().strip()
-        int(page_count)
+        #page_count = response.css('ul.catalog-pagination li::text')[5].get().strip()
+        #int(page_count)
+        page_count = 10
         request_url = 'https://amwine.ru/local/components/adinadin/catalog.section.json/ajax_call.php'
         for i in range(2):
             for page in range(1, page_count):
